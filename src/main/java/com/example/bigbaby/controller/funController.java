@@ -197,7 +197,8 @@ public class funController {
                 row.createCell(7).setCellValue(info.getAbstractInfo());
                 //科目编码
                 // 11/7 设计修改 借方科目是 224102 其他应付款 再加上 勘定科目列数据为未払金时 科目替换为221101 其他逻辑不变
-                if (info.getDebitCode().equals("224102") && info.getDebitCodeJP().equals("未払金")) {
+                // 12/14 设计修改 前提要加上是否为工资的判断
+                if (StringUtils.hasLength(info.getIsSalary()) && info.getIsSalary().equals("1") && info.getDebitCode().equals("224102") && info.getDebitCodeJP().equals("未払金")) {
                     row.createCell(8).setCellValue("221101");
                     //支付工资分录 暂时通过修改摘要形式完成
                     Cell cell7 = row.getCell(7);
@@ -537,7 +538,7 @@ public class funController {
         //制单日期
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.MONTH, 1);
+        calendar.add(Calendar.MONTH, 0);
         calendar.set(Calendar.DAY_OF_MONTH, 0);
         String lastDay = format.format(calendar.getTime());
         row.createCell(6).setCellValue(lastDay);
