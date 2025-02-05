@@ -631,7 +631,7 @@ public class funController {
                         if (minorNameJP.contains("上海新致") || minorNameJP.contains("大连新致")) {
                             row.createCell(42).setCellValue("1001:供应商档案");
                         } else {
-                            row.createCell(42).setCellValue(minorNameJP.concat(":供应商档案"));
+                            row.createCell(42).setCellValue("S_".concat(minorNameJP).concat(":供应商档案"));
                         }
                         //辅助核算4 部门情况
                         row.createCell(43).setCellValue(minorDepartmentName.concat(":成本中心(自定义档案)"));
@@ -667,7 +667,7 @@ public class funController {
                         //辅助核算3 默认
                         row.createCell(42).setCellValue("88888:项目档案(自定义档案)");
                         //辅助核算4 客户档案
-                        row.createCell(43).setCellValue(minorNameJP.concat(":客户档案"));
+                        row.createCell(43).setCellValue("C_".concat(minorNameJP).concat(":客户档案"));
                         //辅助核算5 部门情况
                         row.createCell(44).setCellValue(minorDepartmentName.concat(":成本中心(自定义档案)"));
                     }
@@ -685,7 +685,7 @@ public class funController {
                         //辅助核算4 部门情况
                         row.createCell(43).setCellValue(minorDepartmentName.concat(":成本中心(自定义档案)"));
                         //辅助核算5 客户档案
-                        row.createCell(44).setCellValue(minorNameJP.concat(":客户档案"));
+                        row.createCell(44).setCellValue("C_".concat(minorNameJP).concat(":客户档案"));
                     }
                     break;
                 // 科目code 500130
@@ -702,7 +702,7 @@ public class funController {
                         if (minorNameJP.contains("上海新致") || minorNameJP.contains("大连新致")) {
                             row.createCell(42).setCellValue("1001:供应商档案");
                         } else {
-                            row.createCell(42).setCellValue(minorNameJP.concat(":供应商档案"));
+                            row.createCell(42).setCellValue("S_".concat(minorNameJP).concat(":供应商档案"));
                         }
                         //辅助核算4 部门情况
                         row.createCell(43).setCellValue(minorDepartmentName.concat(":成本中心(自定义档案)"));
@@ -713,7 +713,7 @@ public class funController {
                     // 辅助科目 客户档案
                     if (StringUtils.hasLength(minorNameJP)) {
                         //辅助核算1 客户档案
-                        row.createCell(40).setCellValue(minorNameJP.concat(":客户档案"));
+                        row.createCell(40).setCellValue("C_".concat(minorNameJP).concat(":客户档案"));
                     }
                     break;
                 // 科目code 224101
@@ -724,19 +724,19 @@ public class funController {
                         if (minorNameJP.contains("上海新致") || minorNameJP.contains("大连新致")) {
                             row.createCell(40).setCellValue("1001:供应商档案");
                         } else {
-                            row.createCell(40).setCellValue(minorNameJP.concat(":供应商档案"));
+                            row.createCell(40).setCellValue("S_".concat(minorNameJP).concat(":供应商档案"));
                         }
                     }
                     break;
                 // 科目code 224102
                 case "224102":
                     // 辅助科目 工会费:供应商档案
-                    row.createCell(40).setCellValue("工会费:供应商档案");
+                    row.createCell(40).setCellValue("S_工会费:供应商档案");
                     break;
                 // 科目code 224104
                 case "224104":
                     // 辅助科目 社保:供应商档案
-                    row.createCell(40).setCellValue("社保:供应商档案");
+                    row.createCell(40).setCellValue("S_社保:供应商档案");
                     break;
                 // 科目code 500101
                 case "500101":
